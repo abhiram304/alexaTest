@@ -1,4 +1,6 @@
 
 exports.search = function(req, res){
-  res.send({status: "hello from server"});
+  var place=req.param("name");
+  console.log("NAME: "+name);
+	res.send({status: "hello from server"});
 };
