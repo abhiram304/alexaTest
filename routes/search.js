@@ -17,7 +17,7 @@ exports.search = function(req, res){
 	  var jsonParse1=JSON.parse(JSON.stringify(data));
 	  console.log("-------------------");
 	  console.log(jsonParse1.businesses[1].name+"  "+jsonParse1.businesses[0].url+" "+jsonParse1.businesses[0].rating+" "+jsonParse1.businesses[0].image_url+" "+jsonParse1.businesses[0].rating_img_url_small);
-	  res.send({status: "hello from server", "data":data});  
+	  res.send({status: "hello from server", "data":data.businesses[0].name});  
 	  	  //res.render('Customer/searchResults',{obj: jsonParse1, "location":location});
 	});
   
