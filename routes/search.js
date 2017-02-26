@@ -13,10 +13,10 @@ exports.search = function(req, res){
 	yelp.search({ term: 'tourism', location : place, radius_filter: '10000', limit: '5' })
 	.then(function (data) {
 		resData=data;
-	  console.log(JSON.stringify(data));
+	  //console.log(JSON.stringify(data));
 	  var jsonParse1=JSON.parse(JSON.stringify(data));
-	  console.log("-------------------");
-	  console.log(jsonParse1.businesses[1].name+"  "+jsonParse1.businesses[0].url+" "+jsonParse1.businesses[0].rating+" "+jsonParse1.businesses[0].image_url+" "+jsonParse1.businesses[0].rating_img_url_small);
+	  console.log("-------------------"+data.businesses[0].name);
+	  //console.log(jsonParse1.businesses[1].name+"  "+jsonParse1.businesses[0].url+" "+jsonParse1.businesses[0].rating+" "+jsonParse1.businesses[0].image_url+" "+jsonParse1.businesses[0].rating_img_url_small);
 	  res.send({status: "hello from server", "data":data.businesses[0].name});  
 	  	  //res.render('Customer/searchResults',{obj: jsonParse1, "location":location});
 	});
